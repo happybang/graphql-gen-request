@@ -1,0 +1,36 @@
+{
+	"name": "graphql-gen-request",
+	"version": "1.0.0",
+	"description": "the simple way gen the graphql request ql",
+	"main": "index.js",
+	"bin": {
+		"gqlgenreq": "./bin/gqlgenreq.js"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/happybang/graphql-gen-request.git"
+	},
+	"dependencies": {
+		"@graphql-codegen/cli": "^1.13.1",
+		"@graphql-codegen/typescript": "^1.13.2",
+		"@graphql-codegen/typescript-graphql-request": "^1.13.2",
+		"@graphql-codegen/typescript-operations": "^1.13.2",
+		"@graphql-codegen/typescript-resolvers": "^1.13.1",
+		"art-template": "^4.13.2",
+		"commander": "^5.1.0",
+		"gql-generator": "^1.0.12",
+		"graphql": "^14.5.8",
+		"graphql-code-generator": "^0.18.2",
+		"node-fetch": "^2.6.0",
+		"node-yaml": "^4.0.1"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/happybang/graphql-gen-request/issues"
+	},
+	"homepage": "https://github.com/happybang/graphql-gen-request#readme"
+}
