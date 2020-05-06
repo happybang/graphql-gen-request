@@ -24,6 +24,7 @@
 		"gql-generator": "^1.0.12",
 		"graphql": "^14.5.8",
 		"graphql-code-generator": "^0.18.2",
+		"graphql-gen-request": "^1.0.1",
 		"node-fetch": "^2.6.0",
 		"node-yaml": "^4.0.1"
 	},
