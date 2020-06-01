@@ -14,7 +14,7 @@
 		"url": "git+https://github.com/happybang/graphql-gen-request.git"
 	},
 	"dependencies": {
-		"@graphql-codegen/cli": "^1.13.1",
+		"@graphql-codegen/cli": "^1.15.0",
 		"@graphql-codegen/typescript": "^1.13.2",
 		"@graphql-codegen/typescript-graphql-request": "^1.13.2",
 		"@graphql-codegen/typescript-operations": "^1.13.2",

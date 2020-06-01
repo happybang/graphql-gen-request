@@ -8,10 +8,11 @@ const build =require("./build")
 const { printSchema, buildClientSchema, introspectionQuery } = require('graphql/utilities');
 const {generate}  = require("@graphql-codegen/cli");
 var os = require('os');
- function processBuild(url,maxlevel, outputResolve) {
+ function processBuild(url,maxlevel, outputResolve,Header={}) {
 	const body = JSON.stringify({ query: introspectionQuery });
   const method = 'POST';
   const headers = {
+		...Header,
     Accept: 'application/json',
     'Content-Type': 'application/json',
 	};
@@ -35,7 +36,11 @@ var os = require('os');
 				});
 				gens.push(generate(
 					{
-						schema: url,
+						schema: {
+							[url]:{
+								headers:Header
+							}
+						},
 						documents: tempDir+`/gql${i}`+'/**/*.gql',
 						generates: {
 							[path.resolve(process.cwd() , outputResolve+"/sdk"+i+".ts")]: {
