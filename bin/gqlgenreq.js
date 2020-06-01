@@ -11,5 +11,10 @@ program
 	.option('--H <items>', 'Header Array split by , such as xx:1', commaSeparatedList)
   .parse(process.argv);
 const { remote, destDirPath, maxLevel = 4 ,H} = program;
-console.log(remote, destDirPath, maxLevel,H)
-processBuild(remote,maxLevel,destDirPath)
+console.log(remote, destDirPath, maxLevel,H);
+const headers = {}
+for(let h in H){
+	headers[H[h].split(":")[0]]=H[h].split(":")[1];
+}
+
+processBuild(remote,maxLevel,destDirPath,headers)
