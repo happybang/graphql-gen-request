@@ -1,6 +1,6 @@
 {
 	"name": "graphql-gen-request",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"description": "the simple way gen the graphql request ql",
 	"main": "index.js",
 	"bin": {
