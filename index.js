@@ -1,14 +1,13 @@
 const fs = require('fs');
 const https = require('https');
 const template = require("art-template")
-const templateStr =require("./template")
 const fetch = require('node-fetch');
 const path = require('path');
 const build =require("./build")
 const { printSchema, buildClientSchema, introspectionQuery } = require('graphql/utilities');
 const {generate}  = require("@graphql-codegen/cli");
 var os = require('os');
- function processBuild(url,maxlevel, outputResolve,Header={}) {
+ function processBuild(url,maxlevel, outputResolve,Header={},templatePath) {
 	const body = JSON.stringify({ query: introspectionQuery });
   const method = 'POST';
   const headers = {
@@ -54,6 +53,10 @@ var os = require('os');
 			Promise.all(gens).then(()=>{
 				console.log("生成完毕！")
 			});
+			let templateStr =require("./template")
+			if(templatePath){
+				templateStr=require(path.resolve(process.cwd(),templatePath))
+			}
 			const render= template.compile(templateStr);
 			fs.writeFileSync(path.resolve(process.cwd() , outputResolve+"requestHelper.ts"),render({
 				levels:levels,
